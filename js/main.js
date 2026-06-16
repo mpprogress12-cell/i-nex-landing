@@ -8,8 +8,7 @@
   // ============================================================
   // Configuration
   // ============================================================
-  // TODO: Replace with your deployed Google Apps Script Web App URL
-  const SCRIPT_URL = 'https://script.google.com/macros/s/ВАШ_ІДЕНТИФІКАТОР/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyf-OZ3tenynkF2iWdhSBHSldkLcICtO9gziwHa9-hJ8I0oWLXMXGUZusIseKvjqvac3g/exec';
 
   // ============================================================
   // Mobile menu

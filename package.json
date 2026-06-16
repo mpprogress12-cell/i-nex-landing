@@ -1,0 +1,16 @@
+{
+  "name": "i-nex-landing",
+  "version": "1.0.0",
+  "description": "Лендінгова сторінка для навчальної програми I-NEX — впровадження AI в управління бізнесом для CEO, COO та керівників команд.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/clasp": "^3.3.0"
+  }
+}

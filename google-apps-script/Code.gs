@@ -31,13 +31,7 @@ function jsonResponse(data, statusCode) {
   statusCode = statusCode || 200;
   return ContentService
     .createTextOutput(JSON.stringify(data))
-    .setMimeType(ContentService.MimeType.JSON)
-    .setHeaders({
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type",
-      "X-Status-Code": String(statusCode)
-    });
+    .setMimeType(ContentService.MimeType.JSON);
 }
 
 /**
@@ -46,13 +40,7 @@ function jsonResponse(data, statusCode) {
 function doOptions() {
   return ContentService
     .createTextOutput("")
-    .setMimeType(ContentService.MimeType.TEXT)
-    .setHeaders({
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type",
-      "Access-Control-Max-Age": "86400"
-    });
+    .setMimeType(ContentService.MimeType.TEXT);
 }
 
 /**
