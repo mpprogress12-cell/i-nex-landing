@@ -27,57 +27,54 @@
     return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
   }
 
-  /* ---- Registration form (Netlify Forms) ----
-     Валідуємо на клієнті; якщо все ок — даємо формі відправитись на Netlify,
-     який перенаправить на /thank-you.html. Бекенд не потрібен. */
+  /* ---- Google Apps Script backend ---- */
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyf-OZ3tenynkF2iWdhSBHSldkLcICtO9gziwHa9-hJ8I0oWLXMXGUZusIseKvjqvac3g/exec';
+
+  /* ---- Registration form (Google Sheets) ---- */
   var reg = document.getElementById("registrationForm");
   if (reg) {
     var rs = document.getElementById("formStatus");
     reg.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+
       var ok = true;
       ["fullName", "company", "position", "email", "phone"].forEach(function (k) {
         var v = (reg[k].value || "").trim();
         if (!v) { setErr(reg, k, "Заповніть це поле"); ok = false; }
         else setErr(reg, k, "");
       });
+
       var em = (reg.email.value || "").trim();
       if (em && !isEmail(em)) { setErr(reg, "email", "Невірний email"); ok = false; }
+
       if (!ok) {
-        ev.preventDefault();
         if (rs) { rs.className = "form-status err"; rs.textContent = "Перевірте підсвічені поля."; }
         return;
       }
-      // валідно → форма відправляється на Netlify (без preventDefault)
-      if (rs) { rs.className = "form-status ok"; rs.textContent = "Надсилаємо…"; }
-    });
-  }
 
-  /* ---- Login form (UI-заглушка) ----
-     Реального входу нема: портал учасників відкриється з початком навчання.
-     Для справжньої авторизації — Netlify Identity або власний бекенд. */
-  var login = document.getElementById("loginForm");
-  if (login) {
-    var ls = document.getElementById("loginStatus");
-    login.addEventListener("submit", function (ev) {
-      ev.preventDefault();
-      var ok = true;
-      var em = (login.loginEmail.value || "").trim();
-      var pw = (login.loginPass.value || "").trim();
-      if (!em) { setErr(login, "loginEmail", "Введіть email"); ok = false; }
-      else if (!isEmail(em)) { setErr(login, "loginEmail", "Невірний email"); ok = false; }
-      else setErr(login, "loginEmail", "");
-      if (!pw) { setErr(login, "loginPass", "Введіть пароль"); ok = false; }
-      else setErr(login, "loginPass", "");
-      if (!ok) return;
-      if (ls) {
-        ls.className = "form-status ok";
-        ls.textContent = "Портал учасників відкриється з початком навчання. Ми надішлемо вам доступ.";
-      }
-    });
-    var forgot = document.getElementById("forgotLink");
-    if (forgot) forgot.addEventListener("click", function (e) {
-      e.preventDefault();
-      if (ls) { ls.className = "form-status ok"; ls.textContent = "Напишіть Марії — відновимо доступ вручну: mariia.halai@gmail.com"; }
+      if (rs) { rs.className = "form-status"; rs.textContent = "Надсилаємо…"; }
+
+      var formData = new FormData(reg);
+      var params = new URLSearchParams(formData);
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: params,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data && data.success) {
+          if (rs) { rs.className = "form-status ok"; rs.textContent = "Дякуємо! Ви зареєстровані. Ми зв'яжемося з вами найближчим часом."; }
+          reg.reset();
+        } else {
+          throw new Error((data && data.message) || "Невідома помилка");
+        }
+      })
+      .catch(function (err) {
+        console.error('Form error:', err);
+        if (rs) { rs.className = "form-status err"; rs.textContent = "Помилка надсилання. Спробуйте ще раз або напишіть нам."; }
+      });
     });
   }
 

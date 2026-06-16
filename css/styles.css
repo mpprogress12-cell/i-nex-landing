@@ -173,3 +173,33 @@
 .ty .contact{margin:26px 0 30px;font-family:var(--display)}
 .ty .contact a{color:var(--orange);font-weight:700;font-size:17px}
 
+
+/* ====== OFFER (пропозиція) ====== */
+.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.offer-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow)}
+.offer-card.dark{background:var(--navy);border-color:var(--navy)}
+.offer-label{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:16px}
+.offer-card.dark .offer-label{color:var(--orange)}
+.offer-card p{color:var(--ink);font-size:16px}
+.offer-big{font-family:var(--display);font-weight:900;font-size:44px;color:#fff;line-height:1}
+.offer-cur{color:#c9ceda;font-size:14px;margin-top:8px}
+.offer-sub{color:var(--gray-l);font-size:13px;font-style:italic;margin-top:4px}
+
+/* ====== PRICING (спецумови) ====== */
+.pricing{background:var(--navy);color:#fff;overflow:hidden;position:relative}
+.pricing::before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:var(--orange);top:-150px;right:-130px;opacity:.9}
+.pricing .container{position:relative;z-index:1}
+.pricing .eyebrow{color:var(--orange)}
+.pricing h2{color:#fff}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px}
+.price-card{background:var(--navy-soft);border:1px solid var(--navy-line);border-radius:var(--r);padding:30px}
+.price-title{font-family:var(--display);font-weight:700;font-size:19px;color:#fff;margin-bottom:14px}
+.price-old{color:var(--gray-l);font-size:17px;text-decoration:line-through}
+.price-new{font-family:var(--display);font-weight:900;font-size:38px;color:var(--orange);line-height:1.1;margin-top:4px}
+.price-new.white{color:#fff}
+.price-sub{color:var(--gray-l);font-size:14px;font-style:italic;margin-bottom:8px}
+.price-badge{display:inline-block;margin-top:14px;background:var(--orange);color:var(--navy);font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:1px;padding:6px 14px;border-radius:8px}
+.price-note{text-align:center;color:#c9ceda;font-size:15px;margin-top:6px}
+.price-contact{text-align:center;color:var(--gray-l);font-size:14px;margin-top:8px}
+.price-contact a{color:var(--orange);font-weight:700}
+@media (max-width:600px){.offer-grid,.price-grid{grid-template-columns:1fr}}

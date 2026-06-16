@@ -23,3 +23,11 @@ google-config.json
 
 # Deploy artifacts
 i-nex-landing-deploy.zip
+
+# Local Netlify folder
+.netlify
+
+# Build/deploy artifacts
+deploy/
+tmp-check/
+i-nex-landing.zip
