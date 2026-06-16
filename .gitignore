@@ -31,3 +31,6 @@ i-nex-landing-deploy.zip
 deploy/
 tmp-check/
 i-nex-landing.zip
+
+# Temporary analysis files
+*-styles.css
