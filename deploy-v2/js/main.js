@@ -64,7 +64,7 @@
       })
       .then(function (res) { return res.json(); })
       .then(function (data) {
-        if (data && data.success) {
+        if (data && (data.success || data.status === 'success')) {
           if (rs) { rs.className = "form-status ok"; rs.textContent = "Дякуємо! Ви зареєстровані. Ми зв'яжемося з вами найближчим часом."; }
           reg.reset();
         } else {
