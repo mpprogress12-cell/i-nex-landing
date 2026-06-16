@@ -15,3 +15,11 @@ Thumbs.db
 
 # Node modules (if ever added)
 node_modules/
+
+# Google credentials and tokens — DO NOT COMMIT
+client_secret*.json
+token.json
+google-config.json
+
+# Deploy artifacts
+i-nex-landing-deploy.zip
