@@ -34,3 +34,7 @@ i-nex-landing.zip
 
 # Temporary analysis files
 *-styles.css
+
+# Brainstorming / visual companion artifacts
+.superpowers/
+docs/
