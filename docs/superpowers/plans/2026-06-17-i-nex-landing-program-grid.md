@@ -148,7 +148,7 @@
 
 - [ ] **Step 1: Open the landing page**
 
-  Run: `start "" "file:///C:/Users/mppro/projects/i-nex-landing/index.html"` (Windows)
+  Run: `start "" "file:////srv/brain/Shared/projects/i-nex-landing/index.html"` (Windows)
   Or open `http://localhost:51528` if the local preview server is running.
 
 - [ ] **Step 2: Check MAP section**
