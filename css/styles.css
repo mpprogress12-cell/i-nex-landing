@@ -268,3 +268,27 @@
   .gift-cta .btn{width:100%}
   .gift-cta{gap:16px;justify-content:center}
 }
+
+/* ====== SCHEDULE (розклад) ====== */
+.schedule{background:var(--navy-soft);border:1px solid var(--navy-line);border-radius:var(--r);padding:30px;margin-top:8px}
+.schedule-label{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;margin-bottom:10px}
+.schedule-title{color:#fff;font-size:24px}
+.schedule-sub{color:#c2c8d4;font-size:15.5px;margin-top:8px;max-width:640px}
+.week{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:24px}
+.day{border:1px solid var(--navy-line);border-radius:12px;padding:16px;min-height:112px;display:flex;flex-direction:column;gap:4px}
+.day-name{font-family:var(--display);font-weight:700;font-size:14px;color:var(--gray-l)}
+.day-time{font-family:var(--display);font-weight:800;font-size:20px;color:#fff;margin-top:auto}
+.day-what{font-size:13.5px;color:#c9ceda}
+.day.on{background:rgba(255,107,0,.12);border-color:rgba(255,107,0,.55)}
+.day.on .day-name{color:var(--orange)}
+.day.qa{border-style:dashed;border-color:rgba(255,255,255,.28)}
+.day.qa .day-name{color:#fff}
+.day.off{opacity:.45}
+@media (max-width:900px){.week{grid-template-columns:repeat(3,1fr)}.day.off{display:none}}
+@media (max-width:600px){
+  .schedule{padding:22px}
+  .week{grid-template-columns:1fr;gap:10px}
+  .day{min-height:0;flex-direction:row;align-items:baseline;flex-wrap:wrap;gap:4px 12px}
+  .day-name{width:100%}
+  .day-time{margin-top:0;font-size:18px}
+}
