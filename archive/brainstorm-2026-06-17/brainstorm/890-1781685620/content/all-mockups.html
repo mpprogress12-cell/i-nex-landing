@@ -1,0 +1,82 @@
+<h2>Три варіанти розміщення огляду 11 сесій</h2>
+<p class="subtitle">Клікни на варіант, який пасує, або скажи A / B / C у терміналі</p>
+
+<div class="cards" style="grid-template-columns: repeat(3, 1fr);">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)" style="cursor:pointer;">
+    <div class="card-image" style="height: 260px; background: #0A0E1A; padding: 18px; color: #fff; font-family: 'Lato', sans-serif; overflow: hidden;">
+      <div style="font-size: 9px; color: #FF6B00; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">Методологія · 11 сесій</div>
+      <div style="font-size: 14px; font-weight: 800; margin-bottom: 12px;">11 сесій крок за кроком</div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="background: #161B2B; border-left: 3px solid #FF6B00; border-radius: 6px; padding: 8px 10px;">
+          <div style="font-size: 10px; color: #FF6B00; font-weight: 700;">ФАЗА 1 · ФУНДАМЕНТ</div>
+          <div style="font-size: 11px; margin-top: 4px;">01 Технічне налаштування</div>
+          <div style="font-size: 11px;">02 Невидима структура бізнесу</div>
+        </div>
+        <div style="background: #161B2B; border-radius: 6px; padding: 8px 10px;">
+          <div style="font-size: 10px; color: #9AA3B2; font-weight: 700;">ФАЗА 2 · ДОКУМЕНТАЦІЯ</div>
+          <div style="font-size: 11px; margin-top: 4px; opacity: .7;">03–08 Операційна система, маркетинг, фінанси...</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Варіант A</h3>
+      <p><strong>Замінити секцію MAP</strong> на детальну карту 11 сесій. Методологія MAP йде в підзаголовок, а основний акцент — на конкретних сесіях і фазах.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)" style="cursor:pointer;">
+    <div class="card-image" style="height: 260px; background: #F4F5F7; padding: 18px; font-family: 'Lato', sans-serif; overflow: hidden;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="background: #0A0E1A; border-radius: 8px; padding: 10px; color: #fff;">
+          <div style="font-size: 9px; color: #FF6B00; font-weight: 700;">MAP</div>
+          <div style="font-size: 12px; font-weight: 700;">Mine → Assemble → Perform</div>
+        </div>
+        <div style="background: #fff; border: 1px solid #E3E6EB; border-radius: 8px; padding: 10px;">
+          <div style="font-size: 9px; color: #FF6B00; font-weight: 700;">НОВА СЕКЦІЯ</div>
+          <div style="font-size: 12px; font-weight: 700; color: #14192B;">Програма навчання</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px;">
+            <div style="background: #F4F5F7; border-radius: 4px; padding: 6px; font-size: 9px; color: #14192B;">01 Tech Setup</div>
+            <div style="background: #F4F5F7; border-radius: 4px; padding: 6px; font-size: 9px; color: #14192B;">02 Структура</div>
+            <div style="background: #F4F5F7; border-radius: 4px; padding: 6px; font-size: 9px; color: #14192B;">03 I-NEX OS</div>
+            <div style="background: #F4F5F7; border-radius: 4px; padding: 6px; font-size: 9px; color: #14192B;">+8 сесій</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Варіант B</h3>
+      <p><strong>Нова секція «Програма»</strong> після MAP. MAP залишається як коротка методологія, а детальна карта сесій — окремим блоком нижче.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)" style="cursor:pointer;">
+    <div class="card-image" style="height: 260px; background: #0A0E1A; padding: 18px; color: #fff; font-family: 'Lato', sans-serif; overflow: hidden;">
+      <div style="font-size: 9px; color: #FF6B00; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">Методологія · 11 сесій</div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+        <div style="background: #161B2B; border-radius: 6px; padding: 8px; text-align: center;">
+          <div style="font-size: 16px; font-weight: 800; color: #FF6B00;">01</div>
+          <div style="font-size: 9px; margin-top: 4px;">Tech Setup</div>
+        </div>
+        <div style="background: #161B2B; border-radius: 6px; padding: 8px; text-align: center;">
+          <div style="font-size: 16px; font-weight: 800; color: #FF6B00;">02</div>
+          <div style="font-size: 9px; margin-top: 4px;">Структура</div>
+        </div>
+        <div style="background: #161B2B; border-radius: 6px; padding: 8px; text-align: center;">
+          <div style="font-size: 16px; font-weight: 800; color: #FF6B00;">03</div>
+          <div style="font-size: 9px; margin-top: 4px;">I-NEX OS</div>
+        </div>
+        <div style="background: #161B2B; border-radius: 6px; padding: 8px; text-align: center; opacity: .6;">
+          <div style="font-size: 16px; font-weight: 800; color: #FF6B00;">...</div>
+        </div>
+        <div style="background: #161B2B; border-radius: 6px; padding: 8px; text-align: center;">
+          <div style="font-size: 16px; font-weight: 800; color: #FF6B00;">11</div>
+          <div style="font-size: 9px; margin-top: 4px;">AI інтеграція</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Варіант C</h3>
+      <p><strong>Компактна сітка</strong> в існуючій секції MAP. 11 карток без довгих описів — номер, назва, тривалість. Швидкий огляд без перегрузу.</p>
+    </div>
+  </div>
+</div>
